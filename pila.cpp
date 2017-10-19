@@ -34,7 +34,8 @@ void Pila<T>::mostrar()
 
 
 template <class T>
-T Pila <T>::eliminar () {
+T Pila <T>::eliminar ()
+{
 	int posUltimo = this->size () - 1;
 	T elem = this->at (posUltimo);
 	this->pop_back();

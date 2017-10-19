@@ -19,7 +19,7 @@ Cola<T>::Cola():vector<T>(){}
 template<class T>
 void Cola <T>::adicionar(T elem)
 {
-	this->insert(this->begin(),elem);
+	this->push_back(elem);
 
 }
 
@@ -32,6 +32,12 @@ void Cola<T>::mostrar()
 	cout<<endl;
 }
 
+template <class T>
+T Cola<T>::eliminar()
+{
+	this->erase(this->begin());
+}
+
 
 
 int main()
@@ -40,5 +46,7 @@ int main()
 	c.adicionar(3);
 	c.adicionar(4);
 	c.adicionar(5);
+	c.mostrar();
+	c.eliminar();
 	c.mostrar();
 }

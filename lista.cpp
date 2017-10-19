@@ -14,6 +14,8 @@ class Lista:public vector<T>
 		int longitud();
 		void insertar(int pos, T element);
 		int buscar(T element);
+		T getelemento(int pos);
+		void setelemento(int pos, T element);
 };
 
 
@@ -64,6 +66,20 @@ int Lista<T>::buscar(T element)
 		return 1;
 }
 
+template<class T>
+T Lista <T>::getelemento(int pos)
+{
+
+	T elem= this->at(pos);
+	return elem;
+}
+
+template<class T>
+void Lista <T>::setelemento(int pos, T element)
+{
+	this->at(pos)=element;
+}
+
 int main()
 {
 	Lista <int> list;
@@ -77,7 +93,13 @@ int main()
 	list.mostrar();
 	int n=list.longitud();
 	cout<<"size of the list: "<<n<<endl;
-	cout<<list.buscar(2)<<endl;
-
+	cout<<"Element u want to search: ?"<<endl;
+	int b;
+	cin>>b;
+	cout<<list.buscar(b)<<endl;
+	int a=list.getelemento(0);
+	cout<<a<<endl;
+	list.setelemento(1,90);
+	list.mostrar();
 
 }
